@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../../partials/header') %>
+    <title>Histories</title>
+</head>
+<body>
+    <%- include('../../partials/navbar') %>
+
+    <div class="container mt-5">
+        <h3>Tambah Baru User History</h3>
+        <div class="card mt-3">
+            <div class="card-body">
+                <form action="/history/create" method="post">
+                    <div class="row d-flex justify-content-between gx-5">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Durasi Bermain <span style="color: red;">*</span></label>
+                                <input name="playingDuration" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Level Pengguna <span style="color: red;">*</span></label>
+                                <select name="levelUser" class="form-select" aria-label="Default select example" required>
+                                    <option value="beginner">Pemula</option>
+                                    <option value="intermediate">Menengah</option>
+                                    <option value="expert">Ahli</option>
+                                    <option value="professional">Profesional</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Skor <span style="color: red;">*</span></label>
+                                <input name="score" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <a class="btn btn-outline-dark" href="/history">Kembali</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../../partials/footer') %>
+</body>
+</html>

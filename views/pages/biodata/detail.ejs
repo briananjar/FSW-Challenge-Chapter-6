@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../../partials/header') %>
+    <title>Biodata</title>
+</head>
+<body>
+    <%- include('../../partials/navbar') %>
+
+    <div class="container mt-5">
+        <h3>Detail Biodata Pemain untuk <%= fullName %></h3>
+        <div class="card mt-3">
+            <div class="card-body">
+                <div>
+                    <div class="row d-flex justify-content-between gx-5">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Nama Lengkap</label>
+                                <input name="fullName" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required disabled value="<%= fullName %>">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Alamat</label>
+                                <textarea name="address" id="" rows="5" class="form-control" disabled><%= address %></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Nomor Telepon</label>
+                                <input name="phoneNumber" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" disabled value="<%= phoneNumber %>">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Hobby</label>
+                                <input name="hobby" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required disabled value="<%= hobby %>">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="btn btn-outline-dark" href="/biodata">Kembali</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../../partials/footer') %>
+</body>
+</html>

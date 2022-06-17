@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../../partials/header') %>
+    <title>History</title>
+</head>
+<body>
+    <%- include('../../partials/navbar') %>
+
+    <div class="container mt-5">
+        <h3>User History</h3>
+        <div class="card mt-3">
+            <div class="card-body">
+                <div>
+                    <div class="d-flex justify-content-end mb-4">
+                        <a href="/history/create" type="button" class="btn btn-primary">Tambah Data</a>
+                    </div>
+                    <div>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Durasi Bermain</th>
+                                    <th scope="col">Level</th>
+                                    <th scope="col">Skor</th>
+                                    <th scope="col">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for (let i = 0; i < history.length; i++) { %>
+                                    <tr style="vertical-align: middle;">
+                                        <th scope="row"><%= i+1 %></th>
+                                        <td><%= history[i].playingDuration %></td>
+                                        <td><%= history[i].levelUser %></td>
+                                        <td><%= history[i].score %></td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false"></button>
+                                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                                                  <li><a class="dropdown-item" href="/history/show/<%= history[i].id %>">Lihat Detail</a></li>
+                                                  <li><a class="dropdown-item" href="/history/update/<%= history[i].id %>">Ubah</a></li>
+                                                  <li><a class="dropdown-item" href="/history/delete/<%= history[i].id %>">Hapus</a></li>
+                                                </ul>
+                                              </div>
+                                        </td>
+                                    </tr>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../../partials/footer') %>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../../partials/header') %>
+    <title>Biodata</title>
+</head>
+<body>
+    <%- include('../../partials/navbar') %>
+
+    <div class="container mt-5">
+        <h3>User Biodata</h3>
+        <div class="card mt-3">
+            <div class="card-body">
+                <div>
+                    <div class="d-flex justify-content-end mb-4">
+                        <a href="/biodata/create" type="button" class="btn btn-primary">Tambah Data</a>
+                    </div>
+                    <div>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Nama Lengkap</th>
+                                    <th scope="col">Nomor Telepon</th>
+                                    <th scope="col">Hobi</th>
+                                    <th scope="col">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for (let i = 0; i < biodata.length; i++) { %>
+                                    <tr style="vertical-align: middle;">
+                                        <th scope="row"><%= i+1 %></th>
+                                        <td><%= biodata[i].fullName %></td>
+                                        <td><%= biodata[i].phoneNumber %></td>
+                                        <td><%= biodata[i].hobby %></td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false"></button>
+                                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                                                  <li><a class="dropdown-item" href="/biodata/show/<%= biodata[i].id %>">Lihat Detail</a></li>
+                                                  <li><a class="dropdown-item" href="/biodata/update/<%= biodata[i].id %>">Ubah</a></li>
+                                                  <li><a class="dropdown-item" href="/biodata/delete/<%= biodata[i].id %>">Hapus</a></li>
+                                                </ul>
+                                              </div>
+                                        </td>
+                                    </tr>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../../partials/footer') %>
+</body>
+</html>

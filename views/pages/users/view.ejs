@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../../partials/header') %>
+    <title>Users</title>
+</head>
+<body>
+    <%- include('../../partials/navbar') %>
+
+    <div class="container mt-5">
+        <h3>User Games</h3>
+        <div class="card mt-3">
+            <div class="card-body">
+                <div>
+                    <div class="d-flex justify-content-end mb-4">
+                        <a href="/users/create" type="button" class="btn btn-primary">Tambah Data</a>
+                    </div>
+                    <div>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Username</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Jenis Kelamin</th>
+                                    <th scope="col">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for (let i = 0; i < users.length; i++) { %>
+                                    <!-- <li><%= users[i] %></li> -->
+                                    <tr style="vertical-align: middle;">
+                                        <th scope="row"><%= i+1 %></th>
+                                        <td><%= users[i].userName %></td>
+                                        <td><%= users[i].email %></td>
+                                        <td><%= users[i].gender === 'male' ? 'Laki-laki' : 'Perempuan' %></td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false"></button>
+                                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                                                  <li><a class="dropdown-item" href="/users/show/<%= users[i].id %>">Lihat Detail</a></li>
+                                                  <li><a class="dropdown-item" href="/users/update/<%= users[i].id %>">Ubah</a></li>
+                                                  <li><a class="dropdown-item" href="/users/delete/<%= users[i].id %>">Hapus</a></li>
+                                                </ul>
+                                              </div>
+                                        </td>
+                                    </tr>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../../partials/footer') %>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../../partials/header') %>
+    <title>Histories</title>
+</head>
+<body>
+    <%- include('../../partials/navbar') %>
+
+    <div class="container mt-5">
+        <h3>Detail User History</h3>
+        <div class="card mt-3">
+            <div class="card-body">
+                <div>
+                    <div class="row d-flex justify-content-between gx-5">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Durasi Bermain</label>
+                                <input name="playingDuration" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required disabled value="<%= playingDuration %>">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Level <span style="color: red;">*</span></label>
+                                <input name="levelUser" type="text" class="form-control" id="exampleInputPassword1" required disabled value="<%= levelUser %>">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Skor <span style="color: red;">*</span></label>
+                                <input name="score" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" disabled value="<%= score %>">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="btn btn-outline-dark" href="/history">Kembali</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../../partials/footer') %>
+</body>
+</html>
