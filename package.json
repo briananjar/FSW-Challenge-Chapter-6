@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/septiann/challenge_chapter6.git"
+    "url": "git+https://github.com/briananjar/FSW-Challenge-Chapter-6.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/septiann/challenge_chapter6/issues"
+    "url": "https://github.com/briananjar/FSW-Challenge-Chapter-6/issues"
   },
-  "homepage": "https://gitlab.com/septiann/challenge_chapter6#readme",
+  "homepage": "https://github.com/briananjar/FSW-Challenge-Chapter-6",
   "dependencies": {
     "ejs": "^3.1.8",
     "express": "^4.18.1",
